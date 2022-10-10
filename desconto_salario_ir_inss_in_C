@@ -1,0 +1,79 @@
+#include "stdio.h"
+ #include "stdlib.h"
+
+ int main() {
+
+     float salario, inss, impr, sal_liquido;
+
+     printf("Calculo de Salario Liquido Com desconto do IR e INSS\n\n");
+     printf("\nDigite seu salario Bruto\n");
+     scanf("%f", &salario);
+
+     //Calcular o INSS
+
+
+     if ( salario <= 1693.72) {
+
+     inss = salario * 0.08;
+
+
+
+     }
+     else
+
+     if ( salario >= 1693.73 && salario <= 2822.90) {
+
+         inss = salario * 0.09;
+
+     }
+     else
+
+     if (salario >= 2822.91 && salario <= 5646.80) {
+        inss = salario * 0.11;
+     }
+
+     else
+
+     if (salario >= 5646.80) {
+        inss = 621.04;
+     }
+
+
+     if ( salario >= 0 && salario <= 1903.98) {
+        impr = salario * 0.00;
+     }
+
+     else
+        if  (salario >= 1903.99 && salario <= 2826.65) {
+        impr = salario * 0.075;
+     }
+
+     if ( salario >= 2826.66 && salario <= 3751.05) {
+        impr = salario * 0.15;
+     }
+
+     else
+        if  (salario >= 3751.06 && salario <= 4664.68) {
+        impr = salario * 0.225;
+     }
+
+     if (salario >= 4664.69) {
+        impr = salario * 0.275;
+     }
+
+
+
+
+
+     sal_liquido = (salario - inss) - impr; //Resultados
+
+     printf( "\nDesconto do INSS e: %.2f\n\n",inss);
+     printf( "Desconto do imposto de renda e: %.2f\n\n", impr);
+     printf( "Salario liquido: %.2f\n\n", sal_liquido);
+
+     return 0;
+
+
+
+ }
+
